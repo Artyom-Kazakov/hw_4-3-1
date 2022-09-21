@@ -2,31 +2,32 @@
 
 class Calculator {
 
-public:
+private:
 	double num1 = 0, num2 = 0;
-	
-	void double_add(double num1, double num2) {
-		std::cout << "num1 + num2 = " << num1 + num2 << std::endl;
+
+public:	
+	double double_add() {
+		return num1 + num2;
 	}
 
-	void double_multiply(double num1, double num2) {
-		std::cout << "num1 * num2 = " << num1 * num2 << std::endl;
+	double double_multiply() {
+		return num1 * num2;
 	}
 
-	void double_substract_1_2(double num1, double num2) {
-		std::cout << "num1 - num2 = " << num1 - num2 << std::endl;
+	double double_substract_1_2() {
+		return num1 - num2;
 	}
 
-	void double_substract_2_1(double num1, double num2) {
-		std::cout << "num2 - num1 = " << num2 - num1 << std::endl;
+	double double_substract_2_1() {
+		return num2 - num1;
 	}
 
-	void double_divide_1_2(double num1, double num2) {
-		std::cout << "num1 / num1 = " << num1 / num2 << std::endl;
+	double double_divide_1_2() {
+		return num1 / num2;
 	}
 
-	void double_divide_2_1(double num1, double num2) {
-		std::cout << "num2 / num1 = " << num2 / num1 << std::endl;
+	double double_divide_2_1() {
+		return num2 / num1;
 	}
 
 	bool set_num1(double &num1) {
@@ -54,7 +55,7 @@ int main() {
 
 	Calculator calc;	
 
-	double num1, num2 = 0;
+	double num1 = 0, num2 = 0;
 	
 	std::cout << "Введите num1: ";
 	std::cin >> num1;
@@ -64,12 +65,12 @@ int main() {
 	std::cin >> num2;
 	calc.set_num2(num2);
 	
-	calc.double_add(num1, num2);
-	calc.double_multiply(num1, num2);
-	calc.double_substract_1_2(num1, num2);
-	calc.double_substract_2_1(num1, num2);
-	calc.double_divide_1_2(num1, num2);
-	calc.double_divide_2_1(num1, num2);
+	std::cout << "num1 + num2 = " << calc.double_add() << std::endl;
+	std::cout << "num1 * num2 = " << calc.double_multiply() << std::endl;
+	std::cout << "num1 - num2 = " << calc.double_substract_1_2() << std::endl;
+	std::cout << "num2 - num1 = " << calc.double_substract_2_1() << std::endl;
+	std::cout << "num1 / num1 = " << calc.double_divide_1_2() << std::endl;
+	std::cout << "num2 / num1 = " << calc.double_divide_2_1() << std::endl;
 
 	return 0;
 }
